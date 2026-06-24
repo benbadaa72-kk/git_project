@@ -15,4 +15,4 @@ jobs:
 
     
       - name: Run Backup Script
-        run: ./backup.sh
+        run: ./backup_avan
