@@ -1,0 +1,19 @@
+name: check error
+
+on: 
+ push:
+  branches: [main]
+
+jobs: 
+ check-error:
+   runs-on: ubuntu-latest
+
+   steps: 
+    - name: checkout repostery
+      uses: actions/checkout@v4
+
+    - name: install shellcheck
+      run: sudo apt update && sudo apt install -y shellcheck
+
+    - name: run shellcheck on script
+      run: shellcheck backup_avan

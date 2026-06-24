@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+
+set -eu
+
+backup(){
+
+server_log="/var/log/server.logs.all"
+
+backup_file="backup_log.tar.gz
+if [[ ! -f " $server_log" ]]; then
+echo "this server not exit check again : $server_log"
+exit 1
+fi
+
+tar -czf  "$backup_file"  "server_log"
+}
+
+gpg --encrypt --recipient "benbadaa72@gmail.com" "$backup_file"
+
+
+rm -f "$backup_file"
+
+
