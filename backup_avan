@@ -7,9 +7,9 @@ backup(){
 
 server_log="/var/log/server.logs.all"
 
-backup_file="backup_log.tar.gz
-if [[ ! -f " $server_log" ]]; then
-echo "this server not exit check again : $server_log"
+backup_file="backup_log.tar.gz"
+if [[ ! -f "$server_log" ]]; then
+echo " this server not exit check again : $server_log "
 exit 1
 fi
 
